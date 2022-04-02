@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pay_free/pages/fill_info_paytm.dart';
 import 'package:pay_free/pages/googlepay.dart';
 import 'package:pay_free/pages/paytm.dart';
 import 'package:pay_free/widgets/custombutton.dart';
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const HomePage(),
+      home: FillInfoPayTM(),
       debugShowCheckedModeBanner: false,
     );
   }
@@ -39,7 +40,7 @@ class HomePage extends StatelessWidget {
           const SizedBox(height: 30),
           ElevatedButton(
               onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => const PayTM()));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => FillInfoPayTM()));
               },
               child: const Text("Paytm", style: TextStyle(fontSize: 30))),
           const SizedBox(height: 20),

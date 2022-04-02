@@ -1,7 +1,25 @@
 import "package:flutter/material.dart";
+import 'package:audioplayers/audioplayers.dart';
 
-class PayTM extends StatelessWidget {
-  const PayTM({Key? key}) : super(key: key);
+class PayTM extends StatefulWidget {
+  const PayTM({Key? key, required this.recv, required this.recvVerified, required this.amount}) : super(key: key);
+
+  final String? recv;
+  final String? recvVerified;
+  final String? amount;
+
+  @override
+  State<PayTM> createState() => _PayTMState();
+}
+
+class _PayTMState extends State<PayTM> {
+  final player = AudioCache(prefix: "assets/paytm/");
+
+  @override
+  void initState() {
+    super.initState();
+    player.play("paytm.mp3");
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -33,14 +51,17 @@ class PayTM extends StatelessWidget {
                         const SizedBox(width: 20),
                         Expanded(
                           child: Column(
-                            children: const [
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
                               Text(
-                                "Cook House Amity University",
-                                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                                widget.recv!.isEmpty ? "Null" : widget.recv!,
+                                style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                               ),
-                              SizedBox(height: 10),
-                              Text("Verified Name: Cook House"),
-                              SizedBox(height: 30),
+                              const SizedBox(height: 10),
+                              widget.recvVerified!.isEmpty
+                                  ? const Text("Verified Name: Null")
+                                  : Text("Verified Name: ${widget.recvVerified}"),
+                              const SizedBox(height: 30),
                             ],
                           ),
                         ),
@@ -53,13 +74,19 @@ class PayTM extends StatelessWidget {
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: const [
-                        Text(
-                          "\u20b9 999",
-                          style: TextStyle(fontWeight: FontWeight.bold),
-                          textScaleFactor: 3.5,
-                        ),
-                        Icon(
+                      children: [
+                        widget.amount!.isEmpty
+                            ? const Text(
+                                "\u20b9 Null",
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                                textScaleFactor: 3.5,
+                              )
+                            : Text(
+                                "\u20b9 ${widget.amount}",
+                                style: const TextStyle(fontWeight: FontWeight.bold),
+                                textScaleFactor: 3.5,
+                              ),
+                        const Icon(
                           Icons.done,
                           size: 50,
                         )
