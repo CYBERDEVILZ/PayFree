@@ -1,18 +1,17 @@
 import "package:flutter/material.dart";
 import 'package:lottie/lottie.dart';
 
-class PayTM extends StatefulWidget {
-  const PayTM({Key? key, required this.recv, required this.recvVerified, required this.amount}) : super(key: key);
+class MilitaryMess extends StatefulWidget {
+  const MilitaryMess({Key? key, required this.recv, required this.amount}) : super(key: key);
 
   final String? recv;
-  final String? recvVerified;
   final String? amount;
 
   @override
-  State<PayTM> createState() => _PayTMState();
+  State<MilitaryMess> createState() => _MilitaryMessState();
 }
 
-class _PayTMState extends State<PayTM> {
+class _MilitaryMessState extends State<MilitaryMess> {
   String monthExtractor(String a) {
     String yo = "null";
     switch (a) {
@@ -117,7 +116,8 @@ class _PayTMState extends State<PayTM> {
                       child: Column(
                         children: [
                           Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
                               CircleAvatar(
                                   backgroundColor: Colors.lightBlue,
@@ -127,30 +127,19 @@ class _PayTMState extends State<PayTM> {
                                     widget.recv!.isEmpty ? "Null" : "$a$b",
                                     style: const TextStyle(fontSize: 25, fontWeight: FontWeight.w500, letterSpacing: 2),
                                   )),
-                              const SizedBox(width: 20),
-                              Expanded(
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      widget.recv!.isEmpty ? "Null" : widget.recv!,
-                                      style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-                                    ),
-                                    const SizedBox(height: 10),
-                                    widget.recvVerified!.isEmpty
-                                        ? const Text("Verified Name: Null")
-                                        : Text("Verified Name: ${widget.recvVerified}"),
-                                    const SizedBox(height: 30),
-                                  ],
-                                ),
+                              Text(
+                                widget.recv!.isEmpty ? "Null" : widget.recv!,
+                                style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 25),
                               ),
-                              const SizedBox(width: 20),
                               Container(
                                   padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
                                   child: const Text("320", style: TextStyle(fontWeight: FontWeight.w500, fontSize: 16)),
                                   decoration:
                                       BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(50)))
                             ],
+                          ),
+                          const SizedBox(
+                            height: 20,
                           ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,

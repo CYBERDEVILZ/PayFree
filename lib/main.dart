@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:pay_free/pages/amity_pay_zones.dart';
 import 'package:pay_free/pages/fill_info_paytm.dart';
 import 'package:pay_free/pages/googlepay.dart';
-import 'package:pay_free/pages/paytm.dart';
 import 'package:pay_free/widgets/custombutton.dart';
 
 void main() {
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: FillInfoPayTM(),
+      home: AmityPayZones(),
       debugShowCheckedModeBanner: false,
     );
   }
