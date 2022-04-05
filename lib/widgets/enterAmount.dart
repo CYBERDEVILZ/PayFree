@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:pay_free/pages/military_mess.dart';
 
+import '../pages/back_mess.dart';
+
 class EnterAmount extends StatelessWidget {
   EnterAmount({Key? key, required this.cafeType}) : super(key: key);
   final String cafeType;
@@ -36,8 +38,12 @@ class EnterAmount extends StatelessWidget {
                         MaterialPageRoute(
                             builder: (context) => MilitaryMess(recv: "Subash Chand", amount: amountController.text)));
                   }
+                  if (cafeType == "Bac") {
+                    Navigator.push(
+                        context, MaterialPageRoute(builder: (context) => BackMess(amount: amountController.text)));
+                  }
                 },
-                child: Text("Fake It!"))
+                child: Text("Pay"))
           ],
         ),
       )),

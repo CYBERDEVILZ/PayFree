@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:pay_free/pages/fill_info_paytm.dart';
-import 'package:pay_free/pages/military_mess.dart';
 import 'package:pay_free/widgets/enterAmount.dart';
 
 class AmityPayZones extends StatelessWidget {
@@ -24,8 +23,16 @@ class AmityPayZones extends StatelessWidget {
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.w300),
                 ),
                 const SizedBox(height: 30),
-                ElevatedButton(onPressed: () {}, child: const Text("Deja Brew Cafe")),
-                ElevatedButton(onPressed: () {}, child: const Text("Back Mess")),
+                ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => EnterAmount(cafeType: "Dej")));
+                    },
+                    child: const Text("Deja Brew Cafe")),
+                ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => EnterAmount(cafeType: "Bac")));
+                    },
+                    child: const Text("Back Mess")),
                 ElevatedButton(
                     onPressed: () {
                       Navigator.push(context, MaterialPageRoute(builder: (context) => EnterAmount(cafeType: "Mil")));

@@ -42,7 +42,7 @@ class FillInfoPayTM extends StatelessWidget {
                             recvVerified: recvVerified.text,
                           )));
             },
-            child: const Text("Fake It!"))
+            child: const Text("Pay"))
       ],
     );
   }
