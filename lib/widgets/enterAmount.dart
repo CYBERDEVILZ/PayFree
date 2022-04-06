@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pay_free/pages/military_mess.dart';
 
 import '../pages/back_mess.dart';
+import '../pages/deja_brew.dart';
 
 class EnterAmount extends StatelessWidget {
   EnterAmount({Key? key, required this.cafeType}) : super(key: key);
@@ -42,8 +43,12 @@ class EnterAmount extends StatelessWidget {
                     Navigator.push(
                         context, MaterialPageRoute(builder: (context) => BackMess(amount: amountController.text)));
                   }
+                  if (cafeType == "Dej") {
+                    Navigator.push(
+                        context, MaterialPageRoute(builder: (context) => DejaBrew(amount: amountController.text)));
+                  }
                 },
-                child: Text("Pay"))
+                child: const Text("Pay"))
           ],
         ),
       )),
