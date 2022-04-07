@@ -100,129 +100,121 @@ class _MilitaryMessState extends State<MilitaryMess> {
         backgroundColor: Colors.transparent,
         centerTitle: true,
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Container(
-                width: MediaQuery.of(context).size.width,
-                margin: const EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                    color: Colors.lightBlue[100]!.withOpacity(0.5), borderRadius: BorderRadius.circular(20)),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
-                      child: Column(
-                        children: [
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Container(
+              width: MediaQuery.of(context).size.width,
+              margin: const EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                  color: Colors.lightBlue[100]!.withOpacity(0.5), borderRadius: BorderRadius.circular(20)),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
+                    child: Column(
+                      children: [
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            CircleAvatar(
+                                backgroundColor: Colors.lightBlue,
+                                foregroundColor: Colors.white,
+                                maxRadius: 30,
+                                child: Text(
+                                  widget.recv!.isEmpty ? "Null" : "$a$b",
+                                  style: const TextStyle(fontSize: 25, fontWeight: FontWeight.w500, letterSpacing: 2),
+                                )),
+                            Text(
+                              widget.recv!.isEmpty ? "Null" : widget.recv!,
+                              style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 25),
+                            ),
+                            Container(
+                                padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
+                                child: const Text("320", style: TextStyle(fontWeight: FontWeight.w500, fontSize: 16)),
+                                decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(50)))
+                          ],
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            widget.amount!.isEmpty
+                                ? const Text(
+                                    "\u20b9 Null",
+                                    style: TextStyle(fontWeight: FontWeight.bold),
+                                    textScaleFactor: 3.5,
+                                  )
+                                : Text(
+                                    "\u20b9 ${widget.amount}",
+                                    style: const TextStyle(fontWeight: FontWeight.bold),
+                                    textScaleFactor: 3.5,
+                                  ),
+                            Lottie.asset('assets/paytm/done2.json', height: 65),
+                          ],
+                        ),
+                        const SizedBox(height: 20),
+                        Text("$day $month, ${timeExtractor(time)}"),
+                        const SizedBox(height: 10),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: const [
+                            Text(
+                              "UPI Ref No. XX 4225",
+                              style: TextStyle(color: Colors.lightBlue),
+                            ),
+                            Icon(
+                              Icons.keyboard_arrow_down,
+                              color: Colors.lightBlue,
+                            )
+                          ],
+                        ),
+                        const SizedBox(height: 30),
+                        Container(
+                          margin: const EdgeInsets.symmetric(horizontal: 10),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
-                              CircleAvatar(
-                                  backgroundColor: Colors.lightBlue,
-                                  foregroundColor: Colors.white,
-                                  maxRadius: 30,
-                                  child: Text(
-                                    widget.recv!.isEmpty ? "Null" : "$a$b",
-                                    style: const TextStyle(fontSize: 25, fontWeight: FontWeight.w500, letterSpacing: 2),
-                                  )),
-                              Text(
-                                widget.recv!.isEmpty ? "Null" : widget.recv!,
-                                style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 25),
+                              Container(
+                                padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
+                                child: const Text("Share", style: TextStyle(fontWeight: FontWeight.w500, fontSize: 15)),
+                                decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(50)),
                               ),
                               Container(
-                                  padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
-                                  child: const Text("320", style: TextStyle(fontWeight: FontWeight.w500, fontSize: 16)),
-                                  decoration:
-                                      BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(50)))
-                            ],
-                          ),
-                          const SizedBox(
-                            height: 20,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              widget.amount!.isEmpty
-                                  ? const Text(
-                                      "\u20b9 Null",
-                                      style: TextStyle(fontWeight: FontWeight.bold),
-                                      textScaleFactor: 3.5,
-                                    )
-                                  : Text(
-                                      "\u20b9 ${widget.amount}",
-                                      style: const TextStyle(fontWeight: FontWeight.bold),
-                                      textScaleFactor: 3.5,
-                                    ),
-                              Lottie.asset('assets/paytm/done2.json', height: 65),
-                            ],
-                          ),
-                          const SizedBox(height: 20),
-                          Text("$day $month, ${timeExtractor(time)}"),
-                          const SizedBox(height: 10),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: const [
-                              Text(
-                                "UPI Ref No. XX 4225",
-                                style: TextStyle(color: Colors.lightBlue),
+                                padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
+                                child:
+                                    const Text("Repeat", style: TextStyle(fontWeight: FontWeight.w500, fontSize: 15)),
+                                decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(50)),
                               ),
-                              Icon(
-                                Icons.keyboard_arrow_down,
-                                color: Colors.lightBlue,
+                              Container(
+                                padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
+                                child: const Text("Split", style: TextStyle(fontWeight: FontWeight.w500, fontSize: 15)),
+                                decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(50)),
                               )
                             ],
                           ),
-                          const SizedBox(height: 30),
-                          Container(
-                            margin: const EdgeInsets.symmetric(horizontal: 10),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceAround,
-                              children: [
-                                Container(
-                                  padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
-                                  child:
-                                      const Text("Share", style: TextStyle(fontWeight: FontWeight.w500, fontSize: 15)),
-                                  decoration:
-                                      BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(50)),
-                                ),
-                                Container(
-                                  padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
-                                  child:
-                                      const Text("Repeat", style: TextStyle(fontWeight: FontWeight.w500, fontSize: 15)),
-                                  decoration:
-                                      BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(50)),
-                                ),
-                                Container(
-                                  padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
-                                  child:
-                                      const Text("Split", style: TextStyle(fontWeight: FontWeight.w500, fontSize: 15)),
-                                  decoration:
-                                      BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(50)),
-                                )
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
-                    Container(
-                      width: MediaQuery.of(context).size.width,
-                      color: Colors.lightBlue,
-                      height: 5,
-                    ),
-                    Container(
-                      width: MediaQuery.of(context).size.width,
-                      color: Colors.indigo,
-                      height: 5,
-                    ),
-                  ],
-                )),
-            const SizedBox(height: 20),
-            Image.asset("assets/paytm/bottomnav.png")
-          ],
-        ),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width,
+                    color: Colors.lightBlue,
+                    height: 5,
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width,
+                    color: Colors.indigo,
+                    height: 5,
+                  ),
+                ],
+              )),
+          Image.asset("assets/paytm/bottomnav.png")
+        ],
       ),
     );
   }
