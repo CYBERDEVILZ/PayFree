@@ -1,6 +1,6 @@
 # PayFree
 
-A decoy for PayTM payments app. Only for education purposes only!
+A decoy for PayTM payments app. For education purposes only!
 
 # Features
 - If studying in Amity University Gurugram, use the readymade pay zones for hassle free payments
