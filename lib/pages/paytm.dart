@@ -89,7 +89,11 @@ class _PayTMState extends State<PayTM> {
 
     if (widget.recv!.isNotEmpty) {
       a = widget.recv!.split(" ")[0][0].toUpperCase();
-      b = widget.recv!.split(" ")[1][0].toUpperCase();
+      if (widget.recv!.split(" ").length >= 2) {
+        b = widget.recv!.split(" ")[1][0].toUpperCase();
+      } else {
+        b = "";
+      }
     }
 
     return Scaffold(

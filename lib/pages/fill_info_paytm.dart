@@ -29,6 +29,7 @@ class FillInfoPayTM extends StatelessWidget {
         TextFormField(
           controller: amount,
           decoration: const InputDecoration(labelText: "Amount", border: OutlineInputBorder()),
+          keyboardType: TextInputType.number,
         ),
         const SizedBox(height: 30),
         ElevatedButton(
