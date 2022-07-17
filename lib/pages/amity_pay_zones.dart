@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pay_free/pages/fill_info_paytm.dart';
-import 'package:pay_free/widgets/enterAmount.dart';
+import 'package:pay_free/widgets/enter_amount.dart';
 import 'package:pay_free/widgets/qr_code_scanner.dart';
 
 class AmityPayZones extends StatelessWidget {

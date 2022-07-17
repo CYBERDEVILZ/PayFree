@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
@@ -40,10 +41,12 @@ class _QrCodeScannerState extends State<QrCodeScanner> {
       onQRViewCreated: (QRViewController controller) {
         this.controller = controller;
         setState(() {});
-        controller.scannedDataStream.listen((event) {
+        late StreamSubscription sub;
+        sub = controller.scannedDataStream.listen((event) {
           String? url = event.code;
           if (url != null) {
             if (url.contains("upi://pay")) {
+              sub.cancel();
               Navigator.pushReplacement(context, MaterialPageRoute(builder: ((context) => ScannedQR(url: url))));
             }
           }
