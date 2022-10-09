@@ -13,7 +13,7 @@ A decoy for PayTM payments app. For education purposes only!
 - Users of this app has no rights to blame it on me for their faults. Face them yourself
 - Never use this app in stores which have installed UPI Speakers to catch these frauds.
 - Be mindful of your surrounding. Spies and Snitches do exists in this world.
-- The app is made just for fun. 
+- The app is made just for fun.     
 - Use it for educational purposes only
 
 # How to Use
