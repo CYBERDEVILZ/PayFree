@@ -17,8 +17,13 @@ A decoy for PayTM payments app. For education purposes only!
 - Use it for educational purposes only
 
 # How to Use
+- Build the APK
+- Follow the Step as shown in the video below.
 
 
 
 https://user-images.githubusercontent.com/55954313/163942652-b137f718-5086-4b5f-8d51-4dac6ff7d774.mp4
 
+
+
+** Strictly for educational purpose, this app was supposed to demonstrate the vulnerability in human scrutiny while busy work hours in mess and how students can exploit the system in ways like this.
